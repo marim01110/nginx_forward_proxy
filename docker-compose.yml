@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  forward-proxy:
+    image: 4155ed329710
+    volumes:
+      - ./nginx.conf:/usr/local/nginx/conf/nginx.conf
+    ports:
+      - 3128:3128

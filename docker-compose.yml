@@ -2,7 +2,7 @@ version: '3'
 
 services:
   forward-proxy:
-    image: 4155ed329710
+    image: marimo1110/nginx_forward_proxy
     volumes:
       - ./nginx.conf:/usr/local/nginx/conf/nginx.conf
     restart: unless-stopped

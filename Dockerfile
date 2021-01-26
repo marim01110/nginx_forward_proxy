@@ -1,7 +1,7 @@
 FROM centos:centos7
 MAINTAINER Kohei Yoshikawa <marimo3418@neko2.net>
 WORKDIR /opt
-COPY ./rc.local /etc/
+ADD ./startup.sh /
 RUN yum update -y\
     && yum upgrade -y\
     && yum install -y wget git patch gcc pcre pcre-devel openssl openssl-devel gd gd-devel
@@ -14,4 +14,4 @@ RUN cd nginx-*.*.*\
     && ./configure --add-module=/opt/ngx_http_proxy_connect_module\
     && make && make install
 RUN rm -r /opt/*
-CMD sleep infinity
+CMD ["/startup.sh"]

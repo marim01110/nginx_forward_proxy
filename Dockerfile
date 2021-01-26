@@ -16,4 +16,5 @@ RUN cd nginx-*.*.*\
 RUN rm -r /opt/*
 RUN yum remove -y wget git patch gcc pcre pcre-devel openssl openssl-devel gd gd-devel
 RUN chmod +x /startup.sh
+CMD sleep infinity
 CMD ["/startup.sh"]

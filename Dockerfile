@@ -14,4 +14,5 @@ RUN cd nginx-*.*.*\
     && ./configure --add-module=/opt/ngx_http_proxy_connect_module\
     && make && make install
 RUN rm -r /opt/*
+RUN chmod u+x /startup.sh
 CMD ["/startup.sh"]

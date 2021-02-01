@@ -5,7 +5,6 @@ services:
     image: marimo1110/nginx_forward_proxy
     volumes:
       - ./nginx.conf:/usr/local/nginx/conf/nginx.conf
-      - ./server.conf:/usr/local/nginx/conf.d/server.conf
     restart: unless-stopped
     ports:
       - 3128:3128

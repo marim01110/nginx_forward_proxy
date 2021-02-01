@@ -13,6 +13,7 @@ RUN cd nginx-*.*.*\
     && patch -p1 < /opt/ngx_http_proxy_connect_module/patch/proxy_connect_rewrite_1018.patch\
     && ./configure --add-module=/opt/ngx_http_proxy_connect_module\
     && make && make install
+ADD ./server.conf /usr/local/nginx/conf.d/
 RUN rm -r /opt/*
 RUN yum remove -y wget git patch gcc pcre-devel openssl gd
 RUN chmod +x /startup.sh
